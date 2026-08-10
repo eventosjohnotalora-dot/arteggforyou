@@ -1,17 +1,362 @@
-<h1>Artegg For You</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h2>La maravilla de la naturaleza enriquecida por las manos del artista.</h2>
+    <title>Artegg For You | John Alexander Otálora Sánchez</title>
 
-    <p>
-        Bienvenido a Artegg For You, un espacio dedicado al arte
-        de transformar la delicada superficie del cascarón de huevo
-        en una pieza única.
-    </p>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <p>
-        <strong>John Alexander Otálora Sánchez</strong><br>
-        Diseñador gráfico de profesión y artista por vocación.
-    </p>
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f7f5f0;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background:
+                linear-gradient(rgba(247,245,240,0.90), rgba(247,245,240,0.95));
+        }
+
+        .logo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #b59b5b;
+            margin-bottom: 35px;
+            font-size: 28px;
+            font-style: italic;
+            color: #222;
+        }
+
+        h1 {
+            font-size: 55px;
+            font-weight: normal;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .slogan {
+            font-size: 20px;
+            font-style: italic;
+            color: #806d3f;
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 14px 38px;
+            border: 1px solid #806d3f;
+            color: #806d3f;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: #806d3f;
+            color: white;
+        }
+
+        section {
+            padding: 90px 10%;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 36px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .linea {
+            width: 70px;
+            height: 1px;
+            background: #b59b5b;
+            margin: 0 auto 45px;
+        }
+
+        .presentacion {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 19px;
+        }
+
+        .nombre-artista {
+            margin-top: 30px;
+            font-size: 24px;
+        }
+
+        .profesion {
+            color: #806d3f;
+            font-style: italic;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .obra {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .imagen-obra {
+            height: 280px;
+            background: #e8e5de;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-style: italic;
+        }
+
+        .obra h3 {
+            font-size: 20px;
+            font-weight: normal;
+            margin-top: 18px;
+        }
+
+        .obra p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .descubre {
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+
+        .descubre .linea {
+            background: #b59b5b;
+        }
+
+        .descubre p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #111;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .slogan {
+                font-size: 17px;
+            }
+
+            .galeria {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PORTADA -->
+
+    <header>
+
+        <div class="logo">
+            ArtEgg
+        </div>
+
+        <h1>Artegg For You</h1>
+
+        <p class="slogan">
+            La maravilla de la naturaleza enriquecida por las manos del artista.
+        </p>
+
+        <a href="#galeria" class="boton">
+            GALERÍA
+        </a>
+
+    </header>
+
+
+    <!-- SOBRE EL ARTISTA -->
+
+    <section>
+
+        <h2 class="titulo-seccion">
+            Conoce este arte y sobre el artista
+        </h2>
+
+        <div class="linea"></div>
+
+        <div class="presentacion">
+
+            <p>
+                Artegg For You nace de la unión entre la delicadeza de la naturaleza
+                y la sensibilidad del arte.
+            </p>
+
+            <p>
+                Cada obra transforma la frágil superficie de un cascarón de huevo
+                en una pieza artística única, trabajada cuidadosamente a mano.
+            </p>
+
+            <p class="nombre-artista">
+                <strong>John Alexander Otálora Sánchez</strong>
+            </p>
+
+            <p class="profesion">
+                Diseñador gráfico de profesión y artista por vocación.
+            </p>
+
+            <p>
+                Colombiano.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALERÍA -->
+
+    <section id="galeria">
+
+        <h2 class="titulo-seccion">
+            GALERÍA
+        </h2>
+
+        <div class="linea"></div>
+
+        <div class="galeria">
+
+            <div class="obra">
+                <div class="imagen-obra">
+                    Imagen de la obra 01
+                </div>
+
+                <h3>Obra 01</h3>
+                <p>Descripción de la obra</p>
+            </div>
+
+
+            <div class="obra">
+                <div class="imagen-obra">
+                    Imagen de la obra 02
+                </div>
+
+                <h3>Obra 02</h3>
+                <p>Descripción de la obra</p>
+            </div>
+
+
+            <div class="obra">
+                <div class="imagen-obra">
+                    Imagen de la obra 03
+                </div>
+
+                <h3>Obra 03</h3>
+                <p>Descripción de la obra</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DESCUBRE ESTE ARTE -->
+
+    <section class="descubre">
+
+        <h2 class="titulo-seccion">
+            Descubre este arte
+        </h2>
+
+        <div class="linea"></div>
+
+        <p>
+            Más que una técnica, cada pieza representa un encuentro entre
+            naturaleza, paciencia, precisión y creatividad.
+        </p>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            <strong>Artegg For You</strong>
+        </p>
+
+        <p>
+            John Alexander Otálora Sánchez · Colombia
+        </p>
+
+        <p>
+            © 2026 Artegg For You
+        </p>
+
+    </footer>
 
 </body>
 </html>
+PASO 5
+
+Después de pegarlo:
+
+No cambies nada del código.
+Baja hasta el final de la página.
+Busca el botón verde “Confirmar cambios”.
+Haz clic.
+Si aparece una ventana preguntando por el mensaje del cambio, deja el que aparezca.
+Pulsa nuevamente “Confirmar cambios”.
+
+⛔ No hagas nada más todavía.
+
+Cuando GitHub termine de guardar el cambio, dime simplemente:
+
+“Ya quedó guardado”
+
+Y entonces vamos a ver la página real, antes de poner fotografías. Así podremos comprobar si el diseño nos gusta y hacer los ajustes necesarios.
