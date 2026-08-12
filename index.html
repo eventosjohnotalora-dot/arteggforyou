@@ -127,48 +127,61 @@
 
         .galeria {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 45px;
             max-width: 1100px;
             margin: auto;
         }
 
         .obra {
-            background: white;
-            padding: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            text-align: center;
         }
 
         .imagen-obra {
-            height: 220px;
-            background: #000;
+            height: 330px;
+            background: #050505;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #888;
-            font-style: italic;
             overflow: hidden;
+            position: relative;
         }
 
         .imagen-obra img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 220px;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
+            transition: transform 0.6s ease, filter 0.6s ease;
         }
+
+        .obra:hover .imagen-obra img {
+            transform: scale(1.04);
+            filter: brightness(0.68);
+        }
+
         .obra h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: normal;
+            letter-spacing: 2px;
+            color: #222;
             margin-top: 18px;
+            transition: color 0.4s ease;
         }
 
         .obra p {
-            color: #777;
-            font-size: 14px;
+            color: #806d3f;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-top: 5px;
         }
 
+.obra:hover h3 {
+    color: #806d3f;
+}
         .descubre {
             background: #222;
             color: white;
@@ -276,57 +289,76 @@
     </section>
 
 
-    <!-- GALERÍA -->
+ <!-- GALERÍA -->
 
-    <section id="galeria">
+<section id="galeria">
 
-        <h2 class="titulo-seccion">
-            OBRAS DE AUTOR
-        </h2>
+    <h2 class="titulo-seccion">
+        GALERÍA
+    </h2>
 
-        <div class="linea"></div>
+    <div class="linea"></div>
 
-        <p class="intro-obras">
-        Obras nacidas de la inspiración y la visión personal del artista,
-        creadas libremente sobre el delicado soporte del cascarón de huevo.
-        </p>
+    <p class="intro-obras">
+        Cinco universos, cinco formas de interpretar la belleza
+        sobre el delicado soporte del cascarón de huevo.
+    </p>
 
-        <div class="galeria">
+    <div class="galeria">
 
-            <div class="obra">
-                <div class="imagen-obra">
-                <img src="Huevo mariposa (Costado).jpeg" alt="Obra de arte en cascarón de huevo">
+        <div class="obra">
+            <div class="imagen-obra">
+                <img src="Huevo mariposa (Costado).jpeg"
+                     alt="Flora y Fauna - Artegg For You">
             </div>
 
-                <h3>Flora y Fauna</h3>
-                <p>Serie de obras de autor</p>
-            </div>
-
-
-            <div class="obra">
-                <div class="imagen-obra">
-                    Imagen de la obra 02
-                </div>
-
-                <h3>Geometría</h3>
-                <p>Serie abstracta de obras de autor</p>
-            </div>
-
-
-            <div class="obra">
-                <div class="imagen-obra">
-                    Imagen de la obra 03
-                </div>
-
-                <h3>Mareas</h3>
-            <p>Serie abstracta de obras de autor</p>
-            </div>
-
+            <h3>FLORA Y FAUNA</h3>
+            <p>Entrar en la serie →</p>
         </div>
 
-    </section>
+
+        <div class="obra">
+            <div class="imagen-obra">
+                GEOMETRÍAS
+            </div>
+
+            <h3>GEOMETRÍAS</h3>
+            <p>Entrar en la serie →</p>
+        </div>
 
 
+        <div class="obra">
+            <div class="imagen-obra">
+                MAREAS
+            </div>
+
+            <h3>MAREAS</h3>
+            <p>Entrar en la serie →</p>
+        </div>
+
+
+        <div class="obra">
+            <div class="imagen-obra">
+                PRECOLOMBINOS
+            </div>
+
+            <h3>PRECOLOMBINOS</h3>
+            <p>Entrar en la serie →</p>
+        </div>
+
+
+        <div class="obra">
+            <div class="imagen-obra">
+                MUNDIAL
+            </div>
+
+            <h3>MUNDIAL</h3>
+            <p>Entrar en la serie →</p>
+        </div>
+
+    </div>
+
+</section>
     <!-- DESCUBRE ESTE ARTE -->
 
     <section class="descubre">
