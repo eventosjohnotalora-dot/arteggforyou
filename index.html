@@ -83,8 +83,25 @@
         }
 
         section {
-            padding: 90px 10%;
-        }
+    padding: 90px 10%;
+}
+
+#galeria {
+    background: #050505;
+    color: #f2eee5;
+    padding-top: 120px;
+    padding-bottom: 130px;
+}
+
+#galeria .titulo-seccion {
+    color: #f2eee5;
+    letter-spacing: 4px;
+}
+
+#galeria .intro-obras {
+    color: #b8b1a4;
+    margin-bottom: 70px;
+}
 
         .titulo-seccion {
             text-align: center;
@@ -125,62 +142,77 @@
             font-style: italic;
         }
 
-        .galeria {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 45px;
-            max-width: 1100px;
-            margin: auto;
-        }
+       .galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 45px;
+    max-width: 1100px;
+    margin: auto;
+}
 
-        .obra {
-            background: transparent;
-            padding: 0;
-            cursor: pointer;
-            text-align: center;
-        }
+.obra {
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+}
 
-        .imagen-obra {
-            height: 330px;
-            background: #050505;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
+.imagen-obra {
+    height: 330px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
 
-        .imagen-obra img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s ease, filter 0.6s ease;
-        }
+.imagen-obra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
 
-        .obra:hover .imagen-obra img {
-            transform: scale(1.04);
-            filter: brightness(0.68);
-        }
+.obra:hover .imagen-obra img {
+    transform: scale(1.04);
+    filter: brightness(0.68);
+}
 
-        .obra h3 {
-            font-size: 22px;
-            font-weight: normal;
-            letter-spacing: 2px;
-            color: #222;
-            margin-top: 18px;
-            transition: color 0.4s ease;
-        }
+.obra h3 {
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #f2eee5;
+    margin-top: 22px;
+    transition: color 0.5s ease;
+}
 
-        .obra p {
-            color: #806d3f;
-            font-size: 13px;
-            letter-spacing: 1px;
-            margin-top: 5px;
-        }
+.obra p {
+    color: #b59b5b;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
 .obra:hover h3 {
-    color: #806d3f;
+    color: #b59b5b;
+}
+
+.obra:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* La quinta serie queda centrada */
+.obra:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 22.5px);
+    margin: 0 auto;
 }
         .descubre {
             background: #222;
@@ -223,7 +255,10 @@
             .galeria {
                 grid-template-columns: 1fr;
             }
-
+            .obra:last-child {
+                grid-column: auto;
+                width: 100%;
+            }
             section {
                 padding: 70px 7%;
             }
@@ -313,7 +348,7 @@
             </div>
 
             <h3>FLORA Y FAUNA</h3>
-            <p>Entrar en la serie →</p>
+            <p>Descubrir la serie →</p>
         </div>
 
 
@@ -324,7 +359,7 @@
             </div>
 
             <h3>GEOMETRÍAS</h3>
-            <p>Entrar en la serie →</p>
+            <p>Explorar la serie →</p>
         </div>
 
 
@@ -335,7 +370,7 @@
             </div>
 
             <h3>MAREAS</h3>
-            <p>Entrar en la serie →</p>
+            <p>Contemplar la serie →</p>
         </div>
 
 
@@ -346,7 +381,7 @@
             </div>
 
             <h3>PRECOLOMBINOS</h3>
-            <p>Entrar en la serie →</p>
+            <p>Viajar a la serie →</p>
         </div>
 
 
@@ -357,7 +392,7 @@
             </div>
 
             <h3>MUNDIAL</h3>
-            <p>Entrar en la serie →</p>
+            <p>Revivir la serie →</p>
         </div>
 
     </div>
