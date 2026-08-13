@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flora y Fauna | Artegg For You</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #050505;
+            color: #f2eee5;
+            line-height: 1.6;
+        }
+
+        .sala {
+            min-height: 100vh;
+            padding: 80px 8% 100px;
+        }
+
+        .encabezado {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 75px;
+        }
+
+        .encabezado h1 {
+            font-size: 42px;
+            font-weight: normal;
+            letter-spacing: 5px;
+            margin-bottom: 18px;
+        }
+
+        .linea {
+            width: 70px;
+            height: 1px;
+            background: #b59b5b;
+            margin: 0 auto 30px;
+        }
+
+        .subtitulo {
+            color: #b59b5b;
+            font-size: 16px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .descripcion {
+            max-width: 700px;
+            margin: 25px auto 0;
+            color: #aaa49a;
+            font-size: 17px;
+            font-style: italic;
+        }
+
+        .obra {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .marco-obra {
+            background: #000;
+            padding: 18px;
+            border: 1px solid #292929;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+        }
+
+        .marco-obra img {
+            width: 100%;
+            max-height: 650px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nombre-obra {
+            margin-top: 28px;
+            font-size: 26px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .serie-obra {
+            margin-top: 7px;
+            color: #b59b5b;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-top: 55px;
+            padding: 13px 32px;
+            border: 1px solid #806d3f;
+            color: #b59b5b;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-size: 13px;
+            transition: 0.4s ease;
+        }
+
+        .volver:hover {
+            background: #806d3f;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #020202;
+            color: #777;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #aaa;
+            font-weight: normal;
+        }
+
+        @media (max-width: 800px) {
+
+            .sala {
+                padding: 60px 6% 80px;
+            }
+
+            .encabezado h1 {
+                font-size: 31px;
+                letter-spacing: 3px;
+            }
+
+            .descripcion {
+                font-size: 16px;
+            }
+
+            .marco-obra {
+                padding: 10px;
+            }
+
+            .nombre-obra {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="sala">
+
+        <header class="encabezado">
+
+            <h1>FLORA Y FAUNA</h1>
+
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                Serie de obras de autor
+            </p>
+
+            <p class="descripcion">
+                Un encuentro entre la naturaleza y la sensibilidad del artista,
+                expresado sobre la delicada superficie del cascarón de huevo.
+            </p>
+
+        </header>
+
+
+        <section class="obra">
+
+            <div class="marco-obra">
+
+                <img src="Huevo mariposa (Costado).jpeg"
+                     alt="Vuelo de Primavera - Artegg For You">
+
+            </div>
+
+            <h2 class="nombre-obra">
+                Vuelo de Primavera
+            </h2>
+
+            <p class="serie-obra">
+                FLORA Y FAUNA
+            </p>
+
+            <a href="index.html#galeria" class="volver">
+                ← VOLVER A LA GALERÍA
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            <strong>Artegg For You</strong>
+            · John Alexander Otálora Sánchez
+        </p>
+
+        <p>
+            © 2026 Artegg For You
+        </p>
+
+    </footer>
+
+</body>
+</html>
