@@ -214,6 +214,106 @@
     width: calc(50% - 22.5px);
     margin: 0 auto;
 }
+        /* CREACIONES PARTICULARES */
+
+#particulares {
+    background: #f7f5f0;
+    color: #222;
+    padding-top: 110px;
+    padding-bottom: 120px;
+}
+
+#particulares .titulo-seccion {
+    color: #222;
+    letter-spacing: 4px;
+}
+
+.intro-particulares {
+    max-width: 800px;
+    margin: 0 auto 70px;
+    text-align: center;
+    font-size: 17px;
+    font-style: italic;
+    color: #806d3f;
+}
+
+.galeria-particulares {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 45px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.particular {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.imagen-particular {
+    height: 360px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagen-particular img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.particular:hover .imagen-particular img {
+    transform: scale(1.04);
+    filter: brightness(0.68);
+}
+
+.particular h3 {
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #222;
+    margin-top: 22px;
+    transition: color 0.5s ease;
+}
+
+.particular p {
+    color: #806d3f;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.particular:hover h3 {
+    color: #b59b5b;
+}
+
+.particular:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+
+    .galeria-particulares {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .imagen-particular {
+        height: 330px;
+    }
+}
         .descubre {
             background: #222;
             color: white;
@@ -396,6 +496,42 @@
             <h3>MUNDIAL</h3>
             <p>Revivir la serie →</p>
         </div>
+
+    </div>
+
+</section>
+    <!-- CREACIONES PARTICULARES -->
+
+<section id="particulares">
+
+    <h2 class="titulo-seccion">
+        CREACIONES PARTICULARES
+    </h2>
+
+    <div class="linea"></div>
+
+    <p class="intro-particulares">
+        Obras concebidas a partir de historias, identidades y proyectos
+        específicos, donde cada creación nace de un encuentro particular
+        entre el artista y quien la inspira o la encarga.
+    </p>
+
+    <div class="galeria-particulares">
+
+        <a href="entre-silencios-y-notas.html" class="particular">
+
+            <div class="imagen-particular">
+
+                <img src="Imágenes-Creaciones-Particulares/Entre Silencios y Notas-Classicos.jpeg"
+                     alt="Entre Silencios y Notas - Artegg For You">
+
+            </div>
+
+            <h3>ENTRE SILENCIOS Y NOTAS</h3>
+
+            <p>Descubrir la obra →</p>
+
+        </a>
 
     </div>
 
