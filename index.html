@@ -45,14 +45,12 @@
             font-style: italic;
             color: #222;
         }
-
         .logo img {
             width: 360px;
             height: 360px;
             object-fit: contain;
             border-radius: 50%;
         }
-
         h1 {
             font-size: 55px;
             font-weight: normal;
@@ -85,25 +83,25 @@
         }
 
         section {
-            padding: 90px 10%;
-        }
+    padding: 90px 10%;
+}
 
-        #galeria {
-            background: #050505;
-            color: #f2eee5;
-            padding-top: 120px;
-            padding-bottom: 130px;
-        }
+#galeria {
+    background: #050505;
+    color: #f2eee5;
+    padding-top: 120px;
+    padding-bottom: 130px;
+}
 
-        #galeria .titulo-seccion {
-            color: #f2eee5;
-            letter-spacing: 4px;
-        }
+#galeria .titulo-seccion {
+    color: #f2eee5;
+    letter-spacing: 4px;
+}
 
-        #galeria .intro-obras {
-            color: #b8b1a4;
-            margin-bottom: 70px;
-        }
+#galeria .intro-obras {
+    color: #b8b1a4;
+    margin-bottom: 70px;
+}
 
         .titulo-seccion {
             text-align: center;
@@ -125,7 +123,6 @@
             text-align: center;
             font-size: 19px;
         }
-
         .intro-obras {
             max-width: 800px;
             margin: 0 auto 35px;
@@ -145,80 +142,178 @@
             font-style: italic;
         }
 
-        .galeria {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 70px 45px;
-            max-width: 1100px;
-            margin: auto;
-        }
+       .galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 45px;
+    max-width: 1100px;
+    margin: auto;
+}
 
-        .obra {
-            background: transparent;
-            padding: 0;
-            cursor: pointer;
-            text-align: center;
-        }
+.obra {
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+}
 
-        .imagen-obra {
-            height: 330px;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
+.imagen-obra {
+    height: 330px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
 
-        .imagen-obra img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.8s ease, filter 0.8s ease;
-        }
+.imagen-obra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
 
-        .obra:hover .imagen-obra img {
-            transform: scale(1.04);
-            filter: brightness(0.68);
-        }
+.obra:hover .imagen-obra img {
+    transform: scale(1.04);
+    filter: brightness(0.68);
+}
 
-        .obra h3 {
-            font-size: 21px;
-            font-weight: normal;
-            letter-spacing: 3px;
-            color: #f2eee5;
-            margin-top: 22px;
-            transition: color 0.5s ease;
-        }
+.obra h3 {
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #f2eee5;
+    margin-top: 22px;
+    transition: color 0.5s ease;
+}
 
-        .obra p {
-            color: #b59b5b;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-top: 8px;
-            opacity: 0;
-            transform: translateY(5px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
+.obra p {
+    color: #b59b5b;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
-        .obra:hover h3 {
-            color: #b59b5b;
-        }
+.obra:hover h3 {
+    color: #b59b5b;
+}
 
-        .obra:hover p {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.obra:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        /* La quinta serie queda centrada */
+/* La quinta serie queda centrada */
+.obra:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 22.5px);
+    margin: 0 auto;
+}
+        /* CREACIONES PARTICULARES */
 
-        .obra:last-child {
-            grid-column: 1 / -1;
-            width: calc(50% - 22.5px);
-            margin: 0 auto;
-        }
+#particulares {
+    background: #f7f5f0;
+    color: #222;
+    padding-top: 110px;
+    padding-bottom: 120px;
+}
 
+#particulares .titulo-seccion {
+    color: #222;
+    letter-spacing: 4px;
+}
+
+.intro-particulares {
+    max-width: 800px;
+    margin: 0 auto 70px;
+    text-align: center;
+    font-size: 17px;
+    font-style: italic;
+    color: #806d3f;
+}
+
+.galeria-particulares {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 45px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.particular {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.imagen-particular {
+    height: 360px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagen-particular img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.particular:hover .imagen-particular img {
+    transform: scale(1.04);
+    filter: brightness(0.68);
+}
+
+.particular h3 {
+    font-size: 21px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #222;
+    margin-top: 22px;
+    transition: color 0.5s ease;
+}
+
+.particular p {
+    color: #806d3f;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.particular:hover h3 {
+    color: #b59b5b;
+}
+
+.particular:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+
+    .galeria-particulares {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .imagen-particular {
+        height: 330px;
+    }
+}
         .descubre {
             background: #222;
             color: white;
@@ -247,32 +342,6 @@
             color: white;
         }
 
-        /* CONTROL DE IDENTIDAD SONORA */
-
-        .control-sonido {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-            width: 48px;
-            height: 48px;
-            border: 1px solid #806d3f;
-            border-radius: 50%;
-            background: rgba(5, 5, 5, 0.88);
-            color: #b59b5b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 19px;
-            cursor: pointer;
-            z-index: 1000;
-            transition: 0.4s ease;
-        }
-
-        .control-sonido:hover {
-            background: #806d3f;
-            color: white;
-        }
-
         @media (max-width: 800px) {
 
             h1 {
@@ -286,41 +355,18 @@
             .galeria {
                 grid-template-columns: 1fr;
             }
-
             .obra:last-child {
                 grid-column: auto;
                 width: 100%;
             }
-
             section {
                 padding: 70px 7%;
-            }
-
-            .control-sonido {
-                right: 18px;
-                bottom: 18px;
             }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- IDENTIDAD SONORA DE ARTEGG FOR YOU -->
-
-    <audio id="musicaAmbiental" loop preload="auto">
-        <source src="Marea-de-Petalos-Artegg-For-You.mp3" type="audio/mpeg">
-    </audio>
-
-    <button
-        id="controlSonido"
-        class="control-sonido"
-        type="button"
-        aria-label="Activar identidad sonora"
-        title="Activar identidad sonora">
-        🔇
-    </button>
-
 
     <!-- PORTADA -->
 
@@ -330,8 +376,10 @@
             <img src="Logo Artegg Repujado.jpg" alt="Logo Artegg For You">
         </div>
 
+      
+
         <a href="#galeria" class="boton">
-            DESCUBRIR LAS OBRAS
+              DESCUBRIR LAS OBRAS
         </a>
 
     </header>
@@ -376,92 +424,118 @@
     </section>
 
 
-    <!-- GALERÍA -->
+<!-- GALERÍA -->
 
-    <section id="galeria">
+<section id="galeria">
 
-        <h2 class="titulo-seccion">
-            GALERÍA
-        </h2>
+    <h2 class="titulo-seccion">
+        GALERÍA
+    </h2>
 
-        <div class="linea"></div>
+    <div class="linea"></div>
 
-        <p class="intro-obras">
-            Cinco universos, cinco formas de interpretar la belleza
-            sobre el delicado soporte del cascarón de huevo.
-        </p>
+    <p class="intro-obras">
+        Cinco universos, cinco formas de interpretar la belleza
+        sobre el delicado soporte del cascarón de huevo.
+    </p>
 
-        <div class="galeria">
+    <div class="galeria">
 
-            <a href="flora-y-fauna.html" class="obra">
+      <a href="flora-y-fauna.html" class="obra">
 
-                <div class="imagen-obra">
-                    <img src="Huevo mariposa (Costado).jpeg"
-                         alt="Flora y Fauna - Artegg For You">
-                </div>
+    <div class="imagen-obra">
+        <img src="Huevo mariposa (Costado).jpeg"
+             alt="Flora y Fauna - Artegg For You">
+    </div>
 
-                <h3>FLORA Y FAUNA</h3>
-                <p>Descubrir la serie →</p>
+    <h3>FLORA Y FAUNA</h3>
+    <p>Descubrir la serie →</p>
 
-            </a>
+</a>
 
 
-            <div class="obra">
-
-                <div class="imagen-obra">
-                    <img src="Huevo Geometrías.jpeg"
-                         alt="Geometrías - Artegg For You">
-                </div>
-
-                <h3>GEOMETRÍAS</h3>
-                <p>Explorar la serie →</p>
-
+        <div class="obra">
+            <div class="imagen-obra">
+                <img src="Huevo Geometrías.jpeg"
+                     alt="Geometrías - Artegg For You">
             </div>
 
-
-            <div class="obra">
-
-                <div class="imagen-obra">
-                    <img src="Huevo Mareas.jpeg"
-                         alt="Mareas - Artegg For You">
-                </div>
-
-                <h3>MAREAS</h3>
-                <p>Contemplar la serie →</p>
-
-            </div>
-
-
-            <div class="obra">
-
-                <div class="imagen-obra">
-                    <img src="Huevo Precolombino.jpeg"
-                         alt="Precolombinos - Artegg For You">
-                </div>
-
-                <h3>PRECOLOMBINOS</h3>
-                <p>Viajar a la serie →</p>
-
-            </div>
-
-
-            <div class="obra">
-
-                <div class="imagen-obra">
-                    <img src="Huevo Mundial.jpeg"
-                         alt="Mundial - Artegg For You">
-                </div>
-
-                <h3>MUNDIAL</h3>
-                <p>Revivir la serie →</p>
-
-            </div>
-
+            <h3>GEOMETRÍAS</h3>
+            <p>Explorar la serie →</p>
         </div>
 
-    </section>
+
+        <div class="obra">
+            <div class="imagen-obra">
+                <img src="Huevo Mareas.jpeg"
+                     alt="Mareas - Artegg For You">
+            </div>
+
+            <h3>MAREAS</h3>
+            <p>Contemplar la serie →</p>
+        </div>
 
 
+        <div class="obra">
+            <div class="imagen-obra">
+                <img src="Huevo Precolombino.jpeg"
+                     alt="Precolombinos - Artegg For You">
+            </div>
+
+            <h3>PRECOLOMBINOS</h3>
+            <p>Viajar a la serie →</p>
+        </div>
+
+
+        <div class="obra">
+            <div class="imagen-obra">
+                <img src="Huevo Mundial.jpeg"
+                     alt="Mundial - Artegg For You">
+            </div>
+
+            <h3>MUNDIAL</h3>
+            <p>Revivir la serie →</p>
+        </div>
+
+    </div>
+
+</section>
+    <!-- CREACIONES PARTICULARES -->
+
+<section id="particulares">
+
+    <h2 class="titulo-seccion">
+        CREACIONES PARTICULARES
+    </h2>
+
+    <div class="linea"></div>
+
+    <p class="intro-particulares">
+        Obras concebidas a partir de historias, identidades y proyectos
+        específicos, donde cada creación nace de un encuentro particular
+        entre el artista y quien la inspira o la encarga.
+    </p>
+
+    <div class="galeria-particulares">
+
+        <a href="entre-silencios-y-notas.html" class="particular">
+
+            <div class="imagen-particular">
+
+                <img src="Imágenes-Creaciones-Particulares/Entre Silencios y Notas-Classicos.jpeg"
+                     alt="Entre Silencios y Notas - Artegg For You">
+
+            </div>
+
+            <h3>ENTRE SILENCIOS Y NOTAS</h3>
+
+            <p>Descubrir la obra →</p>
+
+        </a>
+
+    </div>
+
+</section>
     <!-- DESCUBRE ESTE ARTE -->
 
     <section class="descubre">
@@ -498,219 +572,5 @@
 
     </footer>
 
-
-    <!-- SISTEMA DE IDENTIDAD SONORA -->
-
-    <script>
-
-        const musica = document.getElementById("musicaAmbiental");
-        const controlSonido = document.getElementById("controlSonido");
-
-        const posicionGuardada =
-            parseFloat(localStorage.getItem("arteggPosicionMusica")) || 0;
-
-        const sonidoSilenciado =
-            localStorage.getItem("arteggSonidoSilenciado") === "true";
-
-        let musicaActivada = false;
-
-
-        /*
-         * Volumen ambiental.
-         * 25 % del volumen máximo.
-         */
-
-        musica.volume = 0.25;
-
-
-        /*
-         * Recuperamos la posición aproximada
-         * donde quedó la música.
-         */
-
-        musica.addEventListener("loadedmetadata", function() {
-
-            if (
-                posicionGuardada > 0 &&
-                posicionGuardada < musica.duration
-            ) {
-                musica.currentTime = posicionGuardada;
-            }
-
-        });
-
-
-        /*
-         * Guardamos periódicamente la posición
-         * de reproducción.
-         */
-
-        musica.addEventListener("timeupdate", function() {
-
-            if (!musica.paused) {
-
-                localStorage.setItem(
-                    "arteggPosicionMusica",
-                    musica.currentTime
-                );
-
-            }
-
-        });
-
-
-        /*
-         * Si la música llega al final, vuelve a comenzar.
-         * El atributo loop también garantiza el bucle.
-         */
-
-        musica.addEventListener("ended", function() {
-
-            musica.currentTime = 0;
-            musica.play().catch(() => {});
-
-        });
-
-
-        /*
-         * Actualiza visualmente el botón.
-         */
-
-        function actualizarBoton() {
-
-            if (musica.paused) {
-
-                controlSonido.textContent = "🔇";
-
-                controlSonido.setAttribute(
-                    "aria-label",
-                    "Activar identidad sonora"
-                );
-
-                controlSonido.setAttribute(
-                    "title",
-                    "Activar identidad sonora"
-                );
-
-            } else {
-
-                controlSonido.textContent = "🔊";
-
-                controlSonido.setAttribute(
-                    "aria-label",
-                    "Silenciar identidad sonora"
-                );
-
-                controlSonido.setAttribute(
-                    "title",
-                    "Silenciar identidad sonora"
-                );
-
-            }
-
-        }
-
-
-        /*
-         * Primera interacción del visitante.
-         *
-         * Esto permite superar la restricción del navegador
-         * que impide reproducir audio automáticamente
-         * sin interacción del usuario.
-         */
-
-        function primeraInteraccion() {
-
-            if (musicaActivada) {
-                return;
-            }
-
-            musicaActivada = true;
-
-            if (sonidoSilenciado) {
-
-                actualizarBoton();
-                return;
-
-            }
-
-            musica.play().then(function() {
-
-                actualizarBoton();
-
-            }).catch(function() {
-
-                musicaActivada = false;
-
-            });
-
-        }
-
-
-        document.addEventListener(
-            "click",
-            primeraInteraccion,
-            { once: true }
-        );
-
-        document.addEventListener(
-            "touchstart",
-            primeraInteraccion,
-            { once: true }
-        );
-
-        document.addEventListener(
-            "keydown",
-            primeraInteraccion,
-            { once: true }
-        );
-
-
-        /*
-         * Control manual de sonido.
-         */
-
-        controlSonido.addEventListener("click", function(event) {
-
-            event.stopPropagation();
-
-            if (musica.paused) {
-
-                musica.play().then(function() {
-
-                    localStorage.setItem(
-                        "arteggSonidoSilenciado",
-                        "false"
-                    );
-
-                    actualizarBoton();
-
-                }).catch(() => {});
-
-            } else {
-
-                musica.pause();
-
-                localStorage.setItem(
-                    "arteggSonidoSilenciado",
-                    "true"
-                );
-
-                actualizarBoton();
-
-            }
-
-        });
-
-
-        /*
-         * Estado inicial del botón.
-         */
-
-        actualizarBoton();
-
-    </script>
-
 </body>
 </html>
-```
