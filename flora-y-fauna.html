@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -164,6 +165,32 @@
             font-weight: normal;
         }
 
+        /* CONTROL DE IDENTIDAD SONORA */
+
+        .control-sonido {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 48px;
+            height: 48px;
+            border: 1px solid #806d3f;
+            border-radius: 50%;
+            background: rgba(5, 5, 5, 0.88);
+            color: #b59b5b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: 0.4s ease;
+        }
+
+        .control-sonido:hover {
+            background: #806d3f;
+            color: white;
+        }
+
         @media (max-width: 800px) {
 
             .sala {
@@ -192,11 +219,32 @@
                 grid-column: auto;
                 width: 100%;
             }
+
+            .control-sonido {
+                right: 18px;
+                bottom: 18px;
+            }
         }
     </style>
 </head>
 
 <body>
+
+    <!-- IDENTIDAD SONORA DE ARTEGG FOR YOU -->
+
+    <audio id="musicaAmbiental" loop preload="auto">
+        <source src="Marea-de-Petalos-Artegg-For-You.mp3" type="audio/mpeg">
+    </audio>
+
+    <button
+        id="controlSonido"
+        class="control-sonido"
+        type="button"
+        aria-label="Activar identidad sonora"
+        title="Activar identidad sonora">
+        🔇
+    </button>
+
 
     <main class="sala">
 
@@ -336,5 +384,230 @@
 
     </footer>
 
+
+    <!-- SISTEMA DE IDENTIDAD SONORA -->
+
+    <script>
+
+        const musica = document.getElementById("musicaAmbiental");
+        const controlSonido = document.getElementById("controlSonido");
+
+        /*
+         * Recuperamos el estado guardado.
+         */
+
+        const posicionGuardada =
+            parseFloat(localStorage.getItem("arteggPosicionMusica")) || 0;
+
+        const sonidoSilenciado =
+            localStorage.getItem("arteggSonidoSilenciado") === "true";
+
+        let musicaActivada = false;
+
+
+        /*
+         * Volumen ambiental:
+         * 25 % del volumen máximo.
+         */
+
+        musica.volume = 0.25;
+
+
+        /*
+         * Recuperamos la posición aproximada
+         * donde quedó Marea de Pétalos.
+         */
+
+        musica.addEventListener("loadedmetadata", function() {
+
+            if (
+                posicionGuardada > 0 &&
+                posicionGuardada < musica.duration
+            ) {
+                musica.currentTime = posicionGuardada;
+            }
+
+        });
+
+
+        /*
+         * Guardamos periódicamente la posición
+         * mientras la música está sonando.
+         */
+
+        musica.addEventListener("timeupdate", function() {
+
+            if (!musica.paused) {
+
+                localStorage.setItem(
+                    "arteggPosicionMusica",
+                    musica.currentTime
+                );
+
+            }
+
+        });
+
+
+        /*
+         * Si la música llega al final,
+         * vuelve a comenzar.
+
+         * El atributo loop también mantiene
+         * la reproducción continua.
+         */
+
+        musica.addEventListener("ended", function() {
+
+            musica.currentTime = 0;
+
+            if (!sonidoSilenciado) {
+
+                musica.play().catch(() => {});
+
+            }
+
+        });
+
+
+        /*
+         * Actualiza visualmente el botón.
+         */
+
+        function actualizarBoton() {
+
+            if (musica.paused) {
+
+                controlSonido.textContent = "🔇";
+
+                controlSonido.setAttribute(
+                    "aria-label",
+                    "Activar identidad sonora"
+                );
+
+                controlSonido.setAttribute(
+                    "title",
+                    "Activar identidad sonora"
+                );
+
+            } else {
+
+                controlSonido.textContent = "🔊";
+
+                controlSonido.setAttribute(
+                    "aria-label",
+                    "Silenciar identidad sonora"
+                );
+
+                controlSonido.setAttribute(
+                    "title",
+                    "Silenciar identidad sonora"
+                );
+
+            }
+
+        }
+
+
+        /*
+         * Primera interacción del visitante.
+         *
+         * El navegador permite iniciar el audio
+         * después de una interacción del usuario.
+         */
+
+        function primeraInteraccion() {
+
+            if (musicaActivada) {
+                return;
+            }
+
+            musicaActivada = true;
+
+            if (sonidoSilenciado) {
+
+                actualizarBoton();
+                return;
+
+            }
+
+            musica.play().then(function() {
+
+                actualizarBoton();
+
+            }).catch(function() {
+
+                musicaActivada = false;
+
+            });
+
+        }
+
+
+        document.addEventListener(
+            "click",
+            primeraInteraccion,
+            { once: true }
+        );
+
+        document.addEventListener(
+            "touchstart",
+            primeraInteraccion,
+            { once: true }
+        );
+
+        document.addEventListener(
+            "keydown",
+            primeraInteraccion,
+            { once: true }
+        );
+
+
+        /*
+         * Control manual de sonido.
+         */
+
+        controlSonido.addEventListener("click", function(event) {
+
+            event.stopPropagation();
+
+            if (musica.paused) {
+
+                musica.play().then(function() {
+
+                    localStorage.setItem(
+                        "arteggSonidoSilenciado",
+                        "false"
+                    );
+
+                    actualizarBoton();
+
+                }).catch(() => {});
+
+            } else {
+
+                musica.pause();
+
+                localStorage.setItem(
+                    "arteggSonidoSilenciado",
+                    "true"
+                );
+
+                actualizarBoton();
+
+            }
+
+        });
+
+
+        /*
+         * Estado inicial del botón.
+         */
+
+        actualizarBoton();
+
+    </script>
+
 </body>
 </html>
+```
