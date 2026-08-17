@@ -1,580 +1,909 @@
+```html
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Entre silencios y notas | Artegg For You</title>
+    <title>Entre silencios y notas | Artegg For You</title>
 
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-        font-family: Georgia, "Times New Roman", serif;
-        background: #050505;
-        color: #f2eee5;
-        line-height: 1.7;
-    }
-
-    .obra-pagina {
-        min-height: 100vh;
-        padding: 80px 8% 110px;
-    }
-
-    .encabezado {
-        max-width: 900px;
-        margin: 0 auto 80px;
-        text-align: center;
-    }
-
-    .encabezado h1 {
-        font-size: 44px;
-        font-weight: normal;
-        letter-spacing: 5px;
-        margin-bottom: 20px;
-    }
-
-    .linea {
-        width: 70px;
-        height: 1px;
-        background: #b59b5b;
-        margin: 0 auto 35px;
-    }
-
-    .subtitulo {
-        color: #b59b5b;
-        font-size: 17px;
-        font-style: italic;
-        letter-spacing: 1px;
-        margin-bottom: 12px;
-    }
-
-    .contexto {
-        color: #b8b1a4;
-        font-size: 15px;
-        letter-spacing: 1px;
-    }
-
-    .presentacion {
-        max-width: 850px;
-        margin: 0 auto 85px;
-        text-align: center;
-    }
-
-    .presentacion p {
-        color: #d0cbc1;
-        font-size: 18px;
-        margin-bottom: 25px;
-    }
-
-    .presentacion strong {
-        color: #f2eee5;
-        font-weight: normal;
-    }
-
-    .seccion-texto {
-        max-width: 850px;
-        margin: 0 auto 90px;
-    }
-
-    .seccion-texto h2 {
-        text-align: center;
-        font-size: 30px;
-        font-weight: normal;
-        letter-spacing: 3px;
-        margin-bottom: 20px;
-    }
-
-    .seccion-texto .linea {
-        margin-bottom: 40px;
-    }
-
-    .seccion-texto p {
-        color: #c4beb3;
-        font-size: 17px;
-        margin-bottom: 24px;
-    }
-
-    .galeria-obra {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 45px;
-        max-width: 1100px;
-        margin: 0 auto 100px;
-    }
-
-    .vista {
-        background: #000;
-        border: 1px solid #292929;
-        overflow: hidden;
-    }
-
-    .vista img {
-        width: 100%;
-        display: block;
-        height: 430px;
-        object-fit: cover;
-    }
-
-    .vista-completa {
-        grid-column: 1 / -1;
-        max-width: 700px;
-        width: 100%;
-        margin: auto;
-    }
-
-    .vista-completa img {
-        height: 520px;
-    }
-
-    .vista p {
-        text-align: center;
-        padding: 14px;
-        color: #b59b5b;
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-
-    .video-seccion {
-        max-width: 900px;
-        margin: 0 auto 100px;
-        text-align: center;
-    }
-
-    .video-seccion h2 {
-        font-size: 30px;
-        font-weight: normal;
-        letter-spacing: 3px;
-        margin-bottom: 20px;
-    }
-
-    .video-seccion .linea {
-        margin-bottom: 40px;
-    }
-
-    .video-contenedor {
-        background: #000;
-        border: 1px solid #292929;
-        padding: 10px;
-    }
-
-    .video-contenedor video {
-        width: 100%;
-        display: block;
-    }
-
-    .ficha {
-        max-width: 700px;
-        margin: 0 auto 90px;
-        border-top: 1px solid #292929;
-        border-bottom: 1px solid #292929;
-        padding: 35px 20px;
-    }
-
-    .ficha p {
-        color: #b8b1a4;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .ficha strong {
-        color: #f2eee5;
-        font-weight: normal;
-    }
-    .certificado {
-        max-width: 800px;
-        margin: 0 auto 90px;
-        padding: 40px;
-        border-top: 1px solid #292929;
-        border-bottom: 1px solid #292929;
-        text-align: center;
-    }
-
-    .certificado h2 {
-        font-size: 24px;
-        font-weight: normal;
-        letter-spacing: 3px;
-        margin-bottom: 20px;
-    }
-
-    .certificado .linea {
-        margin-bottom: 30px;
-    }
-
-    .certificado p {
-        max-width: 650px;
-        margin: 0 auto 28px;
-        color: #b8b1a4;
-        font-size: 16px;
-    }
-
-    .boton-certificado {
-        display: inline-block;
-        padding: 13px 30px;
-        border: 1px solid #806d3f;
-        color: #b59b5b;
-        text-decoration: none;
-        letter-spacing: 2px;
-        font-size: 13px;
-        transition: 0.4s ease;
-    }
-
-    .boton-certificado:hover {
-        background: #806d3f;
-        color: white;
-    }
-    .volver {
-        display: block;
-        width: fit-content;
-        margin: 0 auto;
-        padding: 13px 32px;
-        border: 1px solid #806d3f;
-        color: #b59b5b;
-        text-decoration: none;
-        letter-spacing: 2px;
-        font-size: 13px;
-        transition: 0.4s ease;
-    }
-
-    .volver:hover {
-        background: #806d3f;
-        color: white;
-    }
-
-    footer {
-        text-align: center;
-        padding: 35px 20px;
-        background: #020202;
-        color: #777;
-        font-size: 13px;
-    }
-
-    footer strong {
-        color: #aaa;
-        font-weight: normal;
-    }
-
-    @media (max-width: 800px) {
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #050505;
+            color: #f2eee5;
+            line-height: 1.7;
+        }
 
         .obra-pagina {
-            padding: 60px 6% 80px;
+            min-height: 100vh;
+            padding: 80px 8% 110px;
+        }
+
+        .encabezado {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
         }
 
         .encabezado h1 {
-            font-size: 32px;
-            letter-spacing: 3px;
+            font-size: 44px;
+            font-weight: normal;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
         }
 
-        .presentacion p,
+        .linea {
+            width: 70px;
+            height: 1px;
+            background: #b59b5b;
+            margin: 0 auto 35px;
+        }
+
+        .subtitulo {
+            color: #b59b5b;
+            font-size: 17px;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .contexto {
+            color: #b8b1a4;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        .presentacion {
+            max-width: 850px;
+            margin: 0 auto 85px;
+            text-align: center;
+        }
+
+        .presentacion p {
+            color: #d0cbc1;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .presentacion strong {
+            color: #f2eee5;
+            font-weight: normal;
+        }
+
+        .seccion-texto {
+            max-width: 850px;
+            margin: 0 auto 90px;
+        }
+
+        .seccion-texto h2 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: normal;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .seccion-texto .linea {
+            margin-bottom: 40px;
+        }
+
         .seccion-texto p {
-            font-size: 16px;
+            color: #c4beb3;
+            font-size: 17px;
+            margin-bottom: 24px;
         }
 
         .galeria-obra {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 45px;
+            max-width: 1100px;
+            margin: 0 auto 100px;
+        }
+
+        .vista {
+            background: #000;
+            border: 1px solid #292929;
+            overflow: hidden;
+        }
+
+        .vista img {
+            width: 100%;
+            display: block;
+            height: 430px;
+            object-fit: cover;
         }
 
         .vista-completa {
-            grid-column: auto;
-            max-width: none;
+            grid-column: 1 / -1;
+            max-width: 700px;
+            width: 100%;
+            margin: auto;
         }
 
-        .vista img,
         .vista-completa img {
-            height: 330px;
+            height: 520px;
         }
-    }
-</style>
-```
 
+        .vista p {
+            text-align: center;
+            padding: 14px;
+            color: #b59b5b;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .video-seccion {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            text-align: center;
+        }
+
+        .video-seccion h2 {
+            font-size: 30px;
+            font-weight: normal;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .video-seccion .linea {
+            margin-bottom: 40px;
+        }
+
+        .video-contenedor {
+            background: #000;
+            border: 1px solid #292929;
+            padding: 10px;
+        }
+
+        .video-contenedor video {
+            width: 100%;
+            display: block;
+        }
+
+        .ficha {
+            max-width: 700px;
+            margin: 0 auto 90px;
+            border-top: 1px solid #292929;
+            border-bottom: 1px solid #292929;
+            padding: 35px 20px;
+        }
+
+        .ficha p {
+            color: #b8b1a4;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .ficha strong {
+            color: #f2eee5;
+            font-weight: normal;
+        }
+
+        .certificado {
+            max-width: 800px;
+            margin: 0 auto 90px;
+            padding: 40px;
+            border-top: 1px solid #292929;
+            border-bottom: 1px solid #292929;
+            text-align: center;
+        }
+
+        .certificado h2 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .certificado .linea {
+            margin-bottom: 30px;
+        }
+
+        .certificado p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #b8b1a4;
+            font-size: 16px;
+        }
+
+        .boton-certificado {
+            display: inline-block;
+            padding: 13px 30px;
+            border: 1px solid #806d3f;
+            color: #b59b5b;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-size: 13px;
+            transition: 0.4s ease;
+        }
+
+        .boton-certificado:hover {
+            background: #806d3f;
+            color: white;
+        }
+
+        .volver {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 13px 32px;
+            border: 1px solid #806d3f;
+            color: #b59b5b;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-size: 13px;
+            transition: 0.4s ease;
+        }
+
+        .volver:hover {
+            background: #806d3f;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #020202;
+            color: #777;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #aaa;
+            font-weight: normal;
+        }
+
+        /* CONTROL DE IDENTIDAD SONORA */
+
+        .control-sonido {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 48px;
+            height: 48px;
+            border: 1px solid #806d3f;
+            border-radius: 50%;
+            background: rgba(5, 5, 5, 0.88);
+            color: #b59b5b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: 0.4s ease;
+        }
+
+        .control-sonido:hover {
+            background: #806d3f;
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+
+            .obra-pagina {
+                padding: 60px 6% 80px;
+            }
+
+            .encabezado h1 {
+                font-size: 32px;
+                letter-spacing: 3px;
+            }
+
+            .presentacion p,
+            .seccion-texto p {
+                font-size: 16px;
+            }
+
+            .galeria-obra {
+                grid-template-columns: 1fr;
+            }
+
+            .vista-completa {
+                grid-column: auto;
+                max-width: none;
+            }
+
+            .vista img,
+            .vista-completa img {
+                height: 330px;
+            }
+
+            .control-sonido {
+                right: 18px;
+                bottom: 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-```
-<main class="obra-pagina">
+    <!-- IDENTIDAD SONORA DE ARTEGG FOR YOU -->
 
-    <header class="encabezado">
+    <audio id="musicaAmbiental" loop preload="auto">
+        <source src="Marea-de-Petalos-Artegg-For-You.mp3" type="audio/mpeg">
+    </audio>
 
-        <h1>ENTRE SILENCIOS Y NOTAS</h1>
-
-        <div class="linea"></div>
-
-        <p class="subtitulo">
-            Idea para conmemorar los 40 años de trayectoria de Rodrigo.
-        </p>
-
-        <p class="contexto">
-            Rodrigo Hernán Valderrama · Classicos
-        </p>
-
-    </header>
+    <button
+        id="controlSonido"
+        class="control-sonido"
+        type="button"
+        aria-label="Activar identidad sonora"
+        title="Activar identidad sonora">
+        🔇
+    </button>
 
 
-    <!-- PRESENTACIÓN -->
+    <main class="obra-pagina">
 
-    <section class="presentacion">
+        <header class="encabezado">
 
-        <p>
-            Esta creación fue realizada por encargo para conmemorar la
-            trayectoria artística de <strong>Rodrigo Hernán Valderrama</strong>,
-            músico y fundador de <strong>Classicos</strong>.
-        </p>
-
-        <p>
-            La obra fue concebida como un homenaje a su recorrido artístico,
-            evitando incorporar fechas de manera explícita dentro del diseño.
-            En su lugar, la trayectoria se expresa mediante el retrato de Rodrigo,
-            el lenguaje de los signos musicales y la identidad de Classicos.
-        </p>
-
-        <p>
-            El resultado reúne <strong>persona, música e identidad artística</strong>
-            sobre la delicada superficie del cascarón de huevo.
-        </p>
-
-    </section>
-
-
-    <!-- LECTURA ARTÍSTICA -->
-
-    <section class="seccion-texto">
-
-        <h2>Una vida entre notas</h2>
-
-        <div class="linea"></div>
-
-        <p>
-            Esta obra fue concebida como una representación visual de la
-            trayectoria artística y vital de Rodrigo Hernán Valderrama.
-        </p>
-
-        <p>
-            El rostro de Rodrigo ocupa la parte frontal del cascarón y
-            constituye el punto de partida de la obra: la persona detrás
-            de una historia construida a lo largo de cuatro décadas de
-            vida artística.
-        </p>
-
-        <p>
-            A ambos lados aparecen diferentes signos musicales. Sin embargo,
-            estos no están organizados sobre un pentagrama ni siguen una
-            composición musical convencional. Su aparente desorden es intencional.
-        </p>
-
-        <p>
-            Cada signo representa un momento, un acontecimiento o una
-            circunstancia dentro de la vida de Rodrigo: momentos que sobresalen,
-            experiencias que dejan huella, instantes de pausa y períodos de
-            silencio o interrupción que, como ocurre en la vida de cualquier
-            persona, también forman parte de una trayectoria.
-        </p>
-
-        <p>
-            Las notas dispersas simbolizan así una vida que no ha seguido
-            siempre una melodía continua. En ellas están representados los
-            momentos de alegría y realización, pero también las frustraciones,
-            las dificultades y el sufrimiento que pueden aparecer en el camino.
-        </p>
-
-        <p>
-            Pero entre todos esos momentos existe un elemento que termina
-            dando sentido al conjunto: <strong>la música</strong>.
-        </p>
-
-        <p>
-            La música aparece no solamente como la profesión de Rodrigo,
-            sino como una fuerza de reorientación y rescate. Después de los
-            silencios, las interrupciones y las dificultades, fue también la
-            música la que contribuyó a devolver dirección y sentido a su camino.
-        </p>
-
-        <p>
-            Por eso los signos musicales no están contenidos dentro de un
-            pentagrama. No representan una canción específica: representan
-            una vida. Una vida compuesta por momentos diferentes, algunos
-            armónicos y otros difíciles de ordenar, pero que finalmente
-            encuentran en la música un lenguaje capaz de volver a unirlos.
-        </p>
-
-        <p>
-            En el espaldar, el logotipo de <strong>Classicos</strong>,
-            acompañado por el micrófono, completa ese recorrido. La identidad
-            personal del frente encuentra su expresión profesional en la parte
-            posterior, cerrando simbólicamente el círculo entre el hombre,
-            su historia y la música.
-        </p>
-
-        <p>
-            La obra, entonces, no pretende simplemente conmemorar cuarenta
-            años de trayectoria artística. Busca representar
-            <strong>el camino que hubo detrás de esos cuarenta años</strong>.
-        </p>
-
-    </section>
-
-
-    <!-- FOTOGRAFÍAS -->
-
-    <section>
-
-        <div class="seccion-texto">
-
-            <h2>La obra en detalle</h2>
+            <h1>ENTRE SILENCIOS Y NOTAS</h1>
 
             <div class="linea"></div>
 
-        </div>
+            <p class="subtitulo">
+                Idea para conmemorar los 40 años de trayectoria de Rodrigo.
+            </p>
 
-        <div class="galeria-obra">
+            <p class="contexto">
+                Rodrigo Hernán Valderrama · Classicos
+            </p>
 
-    <!-- FRENTE -->
-
-    <div class="vista vista-completa">
-
-        <img src="Imágenes-Creaciones-Particulares/Entre-Silencios-y-Notas-Frente.jpeg"
-             alt="Entre silencios y notas - Vista frontal">
-
-        <p>VISTA FRONTAL</p>
-
-    </div>
+        </header>
 
 
-    <!-- COSTADO IZQUIERDO -->
+        <!-- PRESENTACIÓN -->
 
-    <div class="vista">
+        <section class="presentacion">
 
-        <img src="Imágenes-Creaciones-Particulares/Entre-Silencios-y-Notas-Costado-Izquierdo.jpeg"
-             alt="Entre silencios y notas - Costado izquierdo">
+            <p>
+                Esta creación fue realizada por encargo para conmemorar la
+                trayectoria artística de <strong>Rodrigo Hernán Valderrama</strong>,
+                músico y fundador de <strong>Classicos</strong>.
+            </p>
 
-        <p>COSTADO IZQUIERDO</p>
+            <p>
+                La obra fue concebida como un homenaje a su recorrido artístico,
+                evitando incorporar fechas de manera explícita dentro del diseño.
+                En su lugar, la trayectoria se expresa mediante el retrato de Rodrigo,
+                el lenguaje de los signos musicales y la identidad de Classicos.
+            </p>
 
-    </div>
+            <p>
+                El resultado reúne <strong>persona, música e identidad artística</strong>
+                sobre la delicada superficie del cascarón de huevo.
+            </p>
 
-
-    <!-- COSTADO DERECHO -->
-
-    <div class="vista">
-
-        <img src="Imágenes-Creaciones-Particulares/Entre-Silencios-y-Notas-Costado-Derecho.jpeg"
-             alt="Entre silencios y notas - Costado derecho">
-
-        <p>COSTADO DERECHO</p>
-
-    </div>
-
-
-    <!-- ESPALDAR -->
-
-    <div class="vista vista-completa">
-
-        <img src="Imágenes-Creaciones-Particulares/Entre-Silencios-y-Notas-Espaldar.jpeg"
-             alt="Entre silencios y notas - Espaldar">
-
-        <p>VISTA POSTERIOR</p>
-
-    </div>
-
-</div>
-
-    </section>
+        </section>
 
 
-    <!-- VIDEO -->
+        <!-- LECTURA ARTÍSTICA -->
 
-    <section class="video-seccion">
+        <section class="seccion-texto">
 
-        <h2>La obra en movimiento</h2>
+            <h2>Una vida entre notas</h2>
 
-        <div class="linea"></div>
+            <div class="linea"></div>
 
-        <div class="video-contenedor">
+            <p>
+                Esta obra fue concebida como una representación visual de la
+                trayectoria artística y vital de Rodrigo Hernán Valderrama.
+            </p>
 
-    <video controls playsinline preload="metadata">
+            <p>
+                El rostro de Rodrigo ocupa la parte frontal del cascarón y
+                constituye el punto de partida de la obra: la persona detrás
+                de una historia construida a lo largo de cuatro décadas de
+                vida artística.
+            </p>
 
-        <source src="Imágenes-Creaciones-Particulares/Classicos.mp4"
-        type="video/mp4">
+            <p>
+                A ambos lados aparecen diferentes signos musicales. Sin embargo,
+                estos no están organizados sobre un pentagrama ni siguen una
+                composición musical convencional. Su aparente desorden es intencional.
+            </p>
 
-        Tu navegador no puede reproducir este video.
+            <p>
+                Cada signo representa un momento, un acontecimiento o una
+                circunstancia dentro de la vida de Rodrigo: momentos que sobresalen,
+                experiencias que dejan huella, instantes de pausa y períodos de
+                silencio o interrupción que, como ocurre en la vida de cualquier
+                persona, también forman parte de una trayectoria.
+            </p>
 
-    </video>
+            <p>
+                Las notas dispersas simbolizan así una vida que no ha seguido
+                siempre una melodía continua. En ellas están representados los
+                momentos de alegría y realización, pero también las frustraciones,
+                las dificultades y el sufrimiento que pueden aparecer en el camino.
+            </p>
 
-</div>
-    </section>
+            <p>
+                Pero entre todos esos momentos existe un elemento que termina
+                dando sentido al conjunto: <strong>la música</strong>.
+            </p>
+
+            <p>
+                La música aparece no solamente como la profesión de Rodrigo,
+                sino como una fuerza de reorientación y rescate. Después de los
+                silencios, las interrupciones y las dificultades, fue también la
+                música la que contribuyó a devolver dirección y sentido a su camino.
+            </p>
+
+            <p>
+                Por eso los signos musicales no están contenidos dentro de un
+                pentagrama. No representan una canción específica: representan
+                una vida. Una vida compuesta por momentos diferentes, algunos
+                armónicos y otros difíciles de ordenar, pero que finalmente
+                encuentran en la música un lenguaje capaz de volver a unirlos.
+            </p>
+
+            <p>
+                En el espaldar, el logotipo de <strong>Classicos</strong>,
+                acompañado por el micrófono, completa ese recorrido. La identidad
+                personal del frente encuentra su expresión profesional en la parte
+                posterior, cerrando simbólicamente el círculo entre el hombre,
+                su historia y la música.
+            </p>
+
+            <p>
+                La obra, entonces, no pretende simplemente conmemorar cuarenta
+                años de trayectoria artística. Busca representar
+                <strong>el camino que hubo detrás de esos cuarenta años</strong>.
+            </p>
+
+        </section>
 
 
-    <!-- FICHA -->
+        <!-- FOTOGRAFÍAS -->
 
-    <section class="ficha">
+        <section>
 
-        <p>
-            <strong>Obra:</strong> Entre silencios y notas
-        </p>
+            <div class="seccion-texto">
 
-        <p>
-            <strong>Homenajeado:</strong> Rodrigo Hernán Valderrama
-        </p>
+                <h2>La obra en detalle</h2>
 
-        <p>
-            <strong>Proyecto musical:</strong> Classicos
-        </p>
+                <div class="linea"></div>
 
-        <p>
-            <strong>Tipo:</strong> Obra realizada por encargo
-        </p>
+            </div>
 
-        <p>
-            <strong>Soporte:</strong> Cascarón de huevo de gallina
-        </p>
+            <div class="galeria-obra">
 
-    </section>
+                <!-- FRENTE -->
 
-    <!-- CERTIFICADO DE ORIGINALIDAD -->
+                <div class="vista vista-completa">
 
-    <section class="certificado">
+                    <img src="Imágenes-Creaciones-Particulares/Entre-Silencios-y-Notas-Frente.jpeg"
+                         alt="Entre silencios y notas - Vista frontal">
 
-        <h2>CERTIFICADO DE ORIGINALIDAD</h2>
+                    <p>VISTA FRONTAL</p>
 
-        <div class="linea"></div>
+                </div>
 
-        <p>
-            Esta obra cuenta con un certificado de originalidad que
-            documenta su autenticidad, identidad y características.
-        </p>
 
-        <a href="Imágenes-Creaciones-Particulares/Certificado%20Entre%20Silencios%20y%20Notas.pdf"
-           class="boton-certificado"
-           target="_blank">
-            VER CERTIFICADO DIGITAL →
+                <!-- COSTADO IZQUIERDO -->
+
+                <div class="vista">
+
+                    <img src="Imágenes-Creaciones-Particulares/Entre-Silencios-y-Notas-Costado-Izquierdo.jpeg"
+                         alt="Entre silencios y notas - Costado izquierdo">
+
+                    <p>COSTADO IZQUIERDO</p>
+
+                </div>
+
+
+                <!-- COSTADO DERECHO -->
+
+                <div class="vista">
+
+                    <img src="Imágenes-Creaciones-Particulares/Entre-Silencios-y-Notas-Costado-Derecho.jpeg"
+                         alt="Entre silencios y notas - Costado derecho">
+
+                    <p>COSTADO DERECHO</p>
+
+                </div>
+
+
+                <!-- ESPALDAR -->
+
+                <div class="vista vista-completa">
+
+                    <img src="Imágenes-Creaciones-Particulares/Entre-Silencios-y-Notas-Espaldar.jpeg"
+                         alt="Entre silencios y notas - Espaldar">
+
+                    <p>VISTA POSTERIOR</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VIDEO -->
+
+        <section class="video-seccion">
+
+            <h2>La obra en movimiento</h2>
+
+            <div class="linea"></div>
+
+            <div class="video-contenedor">
+
+                <video id="videoObra" controls playsinline preload="metadata">
+
+                    <source
+                        src="Imágenes-Creaciones-Particulares/Classicos.mp4"
+                        type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+            </div>
+
+        </section>
+
+
+        <!-- FICHA -->
+
+        <section class="ficha">
+
+            <p>
+                <strong>Obra:</strong> Entre silencios y notas
+            </p>
+
+            <p>
+                <strong>Homenajeado:</strong> Rodrigo Hernán Valderrama
+            </p>
+
+            <p>
+                <strong>Proyecto musical:</strong> Classicos
+            </p>
+
+            <p>
+                <strong>Tipo:</strong> Obra realizada por encargo
+            </p>
+
+            <p>
+                <strong>Soporte:</strong> Cascarón de huevo de gallina
+            </p>
+
+        </section>
+
+
+        <!-- CERTIFICADO DE ORIGINALIDAD -->
+
+        <section class="certificado">
+
+            <h2>CERTIFICADO DE ORIGINALIDAD</h2>
+
+            <div class="linea"></div>
+
+            <p>
+                Esta obra cuenta con un certificado de originalidad que
+                documenta su autenticidad, identidad y características.
+            </p>
+
+            <a
+                href="Imágenes-Creaciones-Particulares/Certificado%20Entre%20Silencios%20y%20Notas.pdf"
+                class="boton-certificado"
+                target="_blank">
+
+                VER CERTIFICADO DIGITAL →
+
+            </a>
+
+        </section>
+
+
+        <a href="index.html#particulares" class="volver">
+            ← VOLVER A CREACIONES PARTICULARES
         </a>
 
-    </section>
-    <a href="index.html#particulares" class="volver">
-        ← VOLVER A CREACIONES PARTICULARES
-    </a>
-
-</main>
+    </main>
 
 
-<footer>
+    <footer>
 
-    <p>
-        <strong>Artegg For You</strong>
-        · John Alexander Otálora Sánchez
-    </p>
+        <p>
+            <strong>Artegg For You</strong>
+            · John Alexander Otálora Sánchez
+        </p>
 
-    <p>
-        © 2026 Artegg For You
-    </p>
+        <p>
+            © 2026 Artegg For You
+        </p>
 
-</footer>
-```
+    </footer>
+
+
+    <!-- SISTEMA DE IDENTIDAD SONORA -->
+
+    <script>
+
+        const musica = document.getElementById("musicaAmbiental");
+        const controlSonido = document.getElementById("controlSonido");
+        const videoObra = document.getElementById("videoObra");
+
+        /*
+         * Recuperamos el estado guardado en el sitio.
+         */
+
+        const posicionGuardada =
+            parseFloat(localStorage.getItem("arteggPosicionMusica")) || 0;
+
+        const sonidoSilenciado =
+            localStorage.getItem("arteggSonidoSilenciado") === "true";
+
+        let musicaActivada = false;
+
+
+        /*
+         * Volumen ambiental:
+         * 25 % del volumen máximo.
+         */
+
+        musica.volume = 0.25;
+
+
+        /*
+         * Recuperamos la posición anterior
+         * de Marea de Pétalos.
+         */
+
+        musica.addEventListener("loadedmetadata", function() {
+
+            if (
+                posicionGuardada > 0 &&
+                posicionGuardada < musica.duration
+            ) {
+                musica.currentTime = posicionGuardada;
+            }
+
+        });
+
+
+        /*
+         * Guardamos continuamente la posición
+         * mientras la música está sonando.
+         */
+
+        musica.addEventListener("timeupdate", function() {
+
+            if (!musica.paused) {
+
+                localStorage.setItem(
+                    "arteggPosicionMusica",
+                    musica.currentTime
+                );
+
+            }
+
+        });
+
+
+        /*
+         * El audio está configurado en loop.
+         * Este evento además garantiza que vuelva
+         * a comenzar si el navegador no respeta loop.
+         */
+
+        musica.addEventListener("ended", function() {
+
+            musica.currentTime = 0;
+
+            if (!sonidoSilenciado) {
+
+                musica.play().catch(() => {});
+
+            }
+
+        });
+
+
+        /*
+         * Actualiza el icono del control.
+         */
+
+        function actualizarBoton() {
+
+            if (musica.paused) {
+
+                controlSonido.textContent = "🔇";
+
+                controlSonido.setAttribute(
+                    "aria-label",
+                    "Activar identidad sonora"
+                );
+
+                controlSonido.setAttribute(
+                    "title",
+                    "Activar identidad sonora"
+                );
+
+            } else {
+
+                controlSonido.textContent = "🔊";
+
+                controlSonido.setAttribute(
+                    "aria-label",
+                    "Silenciar identidad sonora"
+                );
+
+                controlSonido.setAttribute(
+                    "title",
+                    "Silenciar identidad sonora"
+                );
+
+            }
+
+        }
+
+
+        /*
+         * Primera interacción.
+         *
+         * Esto permite activar la música cuando el visitante
+         * llega directamente mediante un QR.
+         */
+
+        function primeraInteraccion() {
+
+            if (musicaActivada) {
+                return;
+            }
+
+            musicaActivada = true;
+
+            if (sonidoSilenciado) {
+
+                actualizarBoton();
+                return;
+
+            }
+
+            musica.play().then(function() {
+
+                actualizarBoton();
+
+            }).catch(function() {
+
+                musicaActivada = false;
+
+            });
+
+        }
+
+
+        document.addEventListener(
+            "click",
+            primeraInteraccion,
+            { once: true }
+        );
+
+        document.addEventListener(
+            "touchstart",
+            primeraInteraccion,
+            { once: true }
+        );
+
+        document.addEventListener(
+            "keydown",
+            primeraInteraccion,
+            { once: true }
+        );
+
+
+        /*
+         * Control manual de la identidad sonora.
+         */
+
+        controlSonido.addEventListener("click", function(event) {
+
+            event.stopPropagation();
+
+            if (musica.paused) {
+
+                musica.play().then(function() {
+
+                    localStorage.setItem(
+                        "arteggSonidoSilenciado",
+                        "false"
+                    );
+
+                    actualizarBoton();
+
+                }).catch(() => {});
+
+            } else {
+
+                musica.pause();
+
+                localStorage.setItem(
+                    "arteggSonidoSilenciado",
+                    "true"
+                );
+
+                actualizarBoton();
+
+            }
+
+        });
+
+
+        /*
+         * Cuando comienza Classicos.mp4:
+         *
+         * Marea de Pétalos se suspende para que el
+         * sonido propio del video sea protagonista.
+         */
+
+        videoObra.addEventListener("play", function() {
+
+            if (!musica.paused) {
+
+                musica.pause();
+
+            }
+
+        });
+
+
+        /*
+         * Si el visitante pausa el video,
+         * vuelve la identidad sonora.
+         */
+
+        videoObra.addEventListener("pause", function() {
+
+            if (
+                !sonidoSilenciado &&
+                videoObra.currentTime < videoObra.duration
+            ) {
+
+                musica.play().catch(() => {});
+
+            }
+
+        });
+
+
+        /*
+         * Si el video termina,
+         * vuelve la identidad sonora.
+         */
+
+        videoObra.addEventListener("ended", function() {
+
+            if (!sonidoSilenciado) {
+
+                musica.play().catch(() => {});
+
+            }
+
+        });
+
+
+        /*
+         * Estado inicial del control.
+         */
+
+        actualizarBoton();
+
+    </script>
 
 </body>
 </html>
+```
